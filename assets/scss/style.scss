@@ -1,0 +1,155 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	background:#EBECF1;
+	font-size:14px;
+}
+
+a{
+	&:focus,
+	&:active{
+		outline: none;
+	}
+}
+
+#gmui_sidebar{
+	background:#f53b57;
+	position:fixed;
+	top:0; left:0; bottom:0;
+	height:100%;
+	overflow:auto;
+	width:300px;
+	padding-left:20px;
+
+	ul.navbar-nav{
+		li.nav-item{
+			a.nav-link{
+				color:#fff;
+			}
+		}
+	}
+}
+
+#gmui_page{
+	margin-left:300px;
+
+	#gmui_page_header{
+		padding:20px 30px 80px 30px;
+		background:#3c40c6;
+
+		#gmui_page_header_title{
+			text-transform:uppercase;
+			display:inline;
+			color:#fff;
+			font-size:0.9em;
+
+			.breadcrumb{
+				background:none;
+				padding:0;
+				margin:0;
+				display:inline;
+
+				.breadcrumb-item{
+					display:inline;
+					a{
+						color:#fff;
+					}
+					&.active{
+						font-weight:700;
+						color:#fff;
+					}
+				}
+			}
+		}
+
+		#gmui_page_header_utils{
+			float:right;
+
+			form{
+				width:220px;
+
+				.input-group{
+					background:rgba(255,255,255,0.6);
+					border-radius:30px;
+
+					input{
+						background:none;
+						border:none;
+
+						&:focus{
+							box-shadow:none;
+						}
+					}
+					.input-group-append{
+						button{
+							background:none;
+							border:none;
+							color:#3c40c6;
+						}
+					}
+				}
+			}
+			.nav{
+				float:right;
+				padding-left:15px;
+
+				.nav-item{
+					a{
+						color:#fff;
+					}
+					.dropdown-menu{
+						a{
+							color:#3c40c6;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#gmui_page_content{
+		margin:-30px 30px 30px 30px;
+		min-height:60px;
+
+		.card{
+			margin-bottom:20px;
+
+			.card-header{
+				background:transparent;
+				border-bottom:none;
+				padding:10px 20px 0 20px;
+
+				.card-title{
+					margin-top:10px;
+				}
+			}
+			.card-body{
+				padding:15px 20px 10px 20px;
+			}
+		}
+
+		.table-striped{
+			thead{
+				
+				tr{
+					th{
+						font-weight: 300;
+						color:#f53b57;
+						font-size:1.4em;
+						border-top:none;
+					}
+				}
+			}
+			tbody{
+				tr{
+					&:nth-of-type(2n+1){
+						background:#EBECF180;	
+					}
+					
+				}
+			}
+		}
+			
+	}
+}
+
+
