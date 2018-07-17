@@ -11622,14 +11622,15 @@ a:focus, a:active {
 #gmui_page {
   margin-left: 230px; }
   #gmui_page #gmui_page_header {
-    padding: 20px 30px 80px 30px;
+    padding: 20px 30px 45px 30px;
     background: #3c40c6;
     z-index: 10; }
     #gmui_page #gmui_page_header #gmui_page_header_title {
       text-transform: uppercase;
       display: inline;
       color: #fff;
-      font-size: 0.9em; }
+      font-size: 0.9em;
+      padding-bottom: 35px; }
       #gmui_page #gmui_page_header #gmui_page_header_title .breadcrumb {
         background: none;
         padding: 0;
@@ -11646,7 +11647,8 @@ a:focus, a:active {
             color: #fff;
             opacity: 0.4; }
     #gmui_page #gmui_page_header #gmui_page_header_utils {
-      float: right; }
+      float: right;
+      padding-bottom: 35px; }
       #gmui_page #gmui_page_header #gmui_page_header_utils form {
         width: 220px; }
         #gmui_page #gmui_page_header #gmui_page_header_utils form .input-group {
@@ -11700,12 +11702,20 @@ a:focus, a:active {
           opacity: 0.5; }
       #gmui_page #gmui_page_content .card .card-body {
         padding: 15px 20px 20px 20px; }
-    #gmui_page #gmui_page_content .table-striped thead tr th {
+    #gmui_page #gmui_page_content table thead tr th {
       font-weight: 300;
       color: #f53b57;
       font-size: 1.3em;
       border-top: none; }
-    #gmui_page #gmui_page_content .table-striped tbody tr:nth-of-type(2n+1) {
+    #gmui_page #gmui_page_content table tbody tr td {
+      font-weight: normal; }
+    #gmui_page #gmui_page_content table tr td.left, #gmui_page #gmui_page_content table tr th.left {
+      text-align: left; }
+    #gmui_page #gmui_page_content table tr td.center, #gmui_page #gmui_page_content table tr th.center {
+      text-align: center; }
+    #gmui_page #gmui_page_content table tr td.right, #gmui_page #gmui_page_content table tr th.right {
+      text-align: right; }
+    #gmui_page #gmui_page_content table.table-striped tbody tr:nth-of-type(2n+1) {
       background: #EBECF1;
       /* The Fallback */
       background: rgba(235, 236, 241, 0.5); }
@@ -11715,5 +11725,12 @@ a:focus, a:active {
       -webkit-transform: translate(-50%, 0);
               transform: translate(-50%, 0);
       white-space: nowrap; }
+    #gmui_page #gmui_page_content .form-group .col-form-label {
+      text-align: right;
+      text-transform: uppercase;
+      font-size: 1em; }
+    #gmui_page #gmui_page_content .custom-select,
+    #gmui_page #gmui_page_content .custom-control-label {
+      font-size: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

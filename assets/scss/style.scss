@@ -139,7 +139,7 @@ a{
 	margin-left:230px;
 
 	#gmui_page_header{
-		padding:20px 30px 80px 30px;
+		padding:20px 30px 45px 30px;
 		background:#3c40c6;
 		z-index:10;
 
@@ -148,6 +148,7 @@ a{
 			display:inline;
 			color:#fff;
 			font-size:0.9em;
+			padding-bottom:35px;
 
 			.breadcrumb{
 				background:none;
@@ -174,6 +175,7 @@ a{
 
 		#gmui_page_header_utils{
 			float:right;
+			padding-bottom:35px;
 
 			form{
 				width:220px;
@@ -223,6 +225,10 @@ a{
 				}
 			}
 		}
+
+		#gmui_page_header_chart{
+
+		}
 	}
 
 	#gmui_page_content{
@@ -254,9 +260,8 @@ a{
 			}
 		}
 
-		.table-striped{
+		table{
 			thead{
-				
 				tr{
 					th{
 						font-weight: 300;
@@ -268,10 +273,27 @@ a{
 			}
 			tbody{
 				tr{
-					&:nth-of-type(2n+1){
-						@include background-opacity($body-bg, 0.5);
+					td{
+						font-weight:normal;
 					}
-					
+				}
+			}
+			tr{
+				td, th{
+					&.left{text-align:left;}
+					&.center{text-align:center;}
+					&.right{text-align:right;}
+				}
+			}
+
+			&.table-striped{
+				tbody{
+					tr{
+						&:nth-of-type(2n+1){
+							@include background-opacity($body-bg, 0.5);
+						}
+						
+					}
 				}
 			}
 		}
@@ -282,7 +304,23 @@ a{
 		    transform: translate(-50%,0);
 		    white-space:nowrap;
 		}
-			
+
+
+		.form-group{
+			.col-form-label{
+				text-align:right;
+				text-transform:uppercase;
+				font-size:1em;
+			}
+		}
+		input, select, textarea{
+			//font-size:1em;
+		}
+		.custom-select,
+		.custom-control-label{
+			font-size:1rem;
+		}
+
 	}
 }
 

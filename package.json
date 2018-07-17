@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^4.1.2",
+    "chart.js": "^2.7.2",
     "chartist": "^0.11.0",
     "font-awesome-5-css": "^5.0.13",
     "jquery": "^3.3.1",
