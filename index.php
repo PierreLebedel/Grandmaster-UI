@@ -4,53 +4,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
 
     <title>Grandmaster UI</title>
   </head>
   <body>
 
     <div id="gmui_sidebar">
-    	<ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a href="#gmui_sidebar_menu1" class="nav-link" data-toggle="collapse">Tableaux</a>
-                <div class="collapse" id="gmui_sidebar_menu1">
-                	<ul class="nav flex-column">
-						<li class="nav-item">
-						    <a href="#" class="nav-link">Classiques</a>
-						</li>
-						<li class="nav-item">
-						    <a href="#" class="nav-link">DataTables</a>
-						</li>
-                	</ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Overview</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Events</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Services</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Contact</a>
-            </li>
-        </ul>
+    	<div id="gmui_sidebar_header">
+	    	<div class="logo">
+	    		<i class="fa fa-fw fa-code"></i> Grandmaster UI
+	    	</div>
+	    </div>
+
+	    <div id="gmui_sidebar_content">
+	    	<ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-tachometer-alt"></i> Dashboard</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#gmui_sidebar_menu1" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fw fa-table"></i> Tableaux <i class="fa fa-fw fa-caret-down"></i></a>
+	                <div class="collapse" id="gmui_sidebar_menu1">
+	                	<ul class="nav flex-column">
+							<li class="nav-item">
+							    <a href="#" class="nav-link"><i class="fa fa-fw fa-caret-right"></i> Classiques</a>
+							</li>
+							<li class="nav-item">
+							    <a href="#" class="nav-link"><i class="fa fa-fw fa-caret-right"></i> DataTables</a>
+							</li>
+							<li class="nav-item">
+							    <a href="#" class="nav-link"><i class="fa fa-fw fa-caret-right"></i> Texte du sous-menu sur 2 lignes (au moins)</a>
+							</li>
+	                	</ul>
+	                </div>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> Overview</a>
+	            </li>
+	        </ul>
+
+	    	<ul class="navbar-nav">
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-tachometer-alt"></i> Dashboard</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#gmui_sidebar_menu2" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fw fa-table"></i> Tableaux <i class="fa fa-fw fa-caret-down"></i></a>
+	                <div class="collapse" id="gmui_sidebar_menu2">
+	                	<ul class="nav flex-column">
+							<li class="nav-item">
+							    <a href="#" class="nav-link"><i class="fa fa-fw fa-caret-right"></i> Classiques</a>
+							</li>
+							<li class="nav-item">
+							    <a href="#" class="nav-link"><i class="fa fa-fw fa-caret-right"></i> DataTables</a>
+							</li>
+	                	</ul>
+	                </div>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> Overview</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> Events</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> About</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> Services</a>
+	            </li>
+	            <li class="nav-item">
+	                <a href="#" class="nav-link"><i class="fa fa-fw fa-arrow-right"></i> Contact</a>
+	            </li>
+	        </ul>
+	    </div>
     </div>
 
     <div id="gmui_page">
@@ -85,6 +112,7 @@
 				    <div class="dropdown-menu dropdown-menu-right">
 				      <a class="dropdown-item" href="#">Profil</a>
 				      <a class="dropdown-item" href="#">Paramètres</a>
+				      <div class="dropdown-divider"></div>
 				      <a class="dropdown-item" href="#">Déconnexion</a>
 				    </div>
 				  </li>
@@ -109,40 +137,56 @@
 
 
     	<div id="gmui_page_content">
+
     		<div class="row">
     			<div class="col-6">
     				<div class="card">
-    					
     					<div class="card-header">
-					        <h4 class="card-title">Simple Table</h4>
-					        <h6 class="card-subtitle">Card subtitle</h6>
+					        <h4 class="card-title">Charts</h4>
 					    </div>
 					    <div class="card-body">
-					    	ici
-					    </div>
-
-    				</div>
-    			</div>
-
-    			<div class="col-3">
-    				<div class="card">
-    					<div class="card-header">
-					        <h4 class="card-title">Simple Table</h4>
-					    </div>
-					    <div class="card-body">
-					    	ici
+					    	<div id="chart_demo_1" style="height:300px;"></div>
 					    </div>
     				</div>
     			</div>
 
-    			<div class="col-3">
+    			<div class="col-6">
     				<div class="card">
     					<div class="card-header">
-					        <h4 class="card-title">Simple Table</h4>
-					        <h6 class="card-subtitle">Card subtitle</h6>
+					        <h4 class="card-title">Charts</h4>
 					    </div>
 					    <div class="card-body">
-					    	ici
+					    	<div id="chart_demo_2" style="height:300px;"></div>
+					    </div>
+    				</div>
+    			</div>
+    		</div>
+
+    		<div class="row">
+
+    			<div class="col-6">
+    				<div class="card">
+    					<div class="card-header">
+					        <h4 class="card-title"><i class="fa fa-fw fa-play"></i> Formulaire</h4>
+					        <h6 class="card-subtitle">Sous-titre</h6>
+					    </div>
+					    <div class="card-body">
+					    	<form action="" method="post">
+					    		<div class="form-group">
+								    <label for="exampleInputEmail1">Email address</label>
+								    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+								    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+								  </div>
+								  <div class="form-group">
+								    <label for="exampleInputPassword1">Password</label>
+								    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+								  </div>
+								  <div class="form-group form-check">
+								    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+								    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+								  </div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+					    	</form>
 					    </div>
     				</div>
     			</div>
@@ -183,6 +227,33 @@
 			    </div>
 			</div>
 
+			<div class="row">
+				<div class="col-6">
+					<div class="card text-center">
+						  <div class="card-header">
+						    <ul class="nav nav-tabs card-header-tabs">
+						      <li class="nav-item">
+						        <a class="nav-link active" href="#">Active</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" href="#">Link</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link disabled" href="#">Disabled</a>
+						      </li>
+						    </ul>
+						  </div>
+						  <div class="card-body">
+						    <h5 class="card-title">Special title treatment</h5>
+						    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						    <a href="#" class="btn btn-primary">Go somewhere</a>
+						  </div>
+						</div>
+
+
+				</div>
+			</div>
+
     	</div>
     </div>
 
@@ -190,8 +261,40 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="node_modules/chartist/dist/chartist.min.js" type="text/javascript"></script>
+
+
+    <script src="assets/js/gmui.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+    	new Chartist.Line('#chart_demo_1', {
+		  	labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
+		  	series: [
+			    [12, 9, 7, 8, 5],
+			    [2, 1, 3.5, 7, 3],
+			    [1, 3, 4, 5, 6]
+			]
+		}, {
+		  	fullWidth: true,
+		  	chartPadding: {
+		    	right: 30
+		  	}
+		});
+
+		new Chartist.Bar('#chart_demo_2', {
+		  	labels: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôut', 'Sep', 'Oct', 'Nov', 'Dec'],
+		  	series: [
+			    [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
+			    [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4],
+			]
+		}, {
+		  	fullWidth: true,
+		  	seriesBarDistance: 10
+		});
+    </script>
   </body>
 </html>

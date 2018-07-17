@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "chartist": "^0.11.0",
+    "font-awesome-5-css": "^5.0.13",
+    "jquery": "^3.3.1",
+    "npm-font-open-sans": "^1.1.0",
+    "popper.js": "^1.14.3"
+  }
+}

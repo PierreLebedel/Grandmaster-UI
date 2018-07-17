@@ -1,6 +1,59 @@
+
+$theme-colors: (
+	"primary": #3c40c6,
+	"secondary": #808e9b,
+	"success": #05c46b,
+	"info": #0fbcf9,
+	"warning": #ffa801,
+	"danger": #ff3f34,
+);
+
+$body-bg: #EBECF1;
+
+@mixin background-opacity($color, $opacity: 0.5) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin placeholder{
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+//@import "../../node_modules/npm-font-open-sans/open-sans";
+
+$fa-font-path: "../../node_modules/font-awesome-5-css/webfonts";
+@import "../../node_modules/font-awesome-5-css/scss/fontawesome";
+@import "../../node_modules/font-awesome-5-css/scss/fa-regular";
+@import "../../node_modules/font-awesome-5-css/scss/fa-solid";
+@import "../../node_modules/font-awesome-5-css/scss/fa-brands";
+
+$ct-series-colors: (
+  #f53b57,
+  #3c40c6,
+  #0fbcf9,
+  #05c46b,
+  #ffa801,
+  #ff3f34,
+  #808e9b,
+  #ef5777,
+  #575fcf,
+  #4bcffa,
+  #0be881,
+  #ffc048,
+  #ff5e57,
+  #1e272e,
+  #00d8d6
+) !default;
+@import "../../node_modules/chartist/dist/scss/chartist";
+
+
+
 body{
 	font-family: 'Open Sans', sans-serif;
-	background:#EBECF1;
 	font-size:14px;
 }
 
@@ -16,25 +69,79 @@ a{
 	position:fixed;
 	top:0; left:0; bottom:0;
 	height:100%;
-	overflow:auto;
-	width:300px;
-	padding-left:20px;
+	width:230px;
+	color:#fff;
 
-	ul.navbar-nav{
-		li.nav-item{
-			a.nav-link{
-				color:#fff;
+	#gmui_sidebar_header{
+		height:50px;
+		overflow:hidden;
+		border-bottom:1px solid #fff;
+		margin:0 15px;
+
+		.logo{
+			height:50px;
+			line-height:50px;
+			overflow:hidden;
+			text-align:center;
+			font-size:1.3em;
+			padding:0 5px;
+			text-transform:uppercase;
+		}
+	}
+
+	#gmui_sidebar_content{
+		height:calc(100% - 50px);
+		overflow:auto;
+
+		ul.navbar-nav{
+			padding:15px 0;
+			margin:0 15px;
+
+			&:not(:last-child){
+				border-bottom:1px solid #fff;
+			}
+
+			li.nav-item{
+				padding:0 5px;
+				border-radius:5px;
+				@include transition(all 0.2s);
+				font-size:1em;
+
+				&.active,
+				&:hover{
+					background:rgba(0,0,0,0.15);
+				}
+
+				a.nav-link{
+					color:#fff;
+				}
+				i.fa-caret-down{
+					float:right;
+					margin-top:4px;
+				}
+
+				.nav{
+					padding-bottom:5px;
+					font-size:0.9em;
+
+					.nav-link{
+						padding:0.3rem;
+						line-height:1.1em;
+					}
+				}
 			}
 		}
 	}
+
 }
 
 #gmui_page{
-	margin-left:300px;
+	margin-left:230px;
 
 	#gmui_page_header{
 		padding:20px 30px 80px 30px;
 		background:#3c40c6;
+		z-index:10;
 
 		#gmui_page_header_title{
 			text-transform:uppercase;
@@ -57,6 +164,10 @@ a{
 						font-weight:700;
 						color:#fff;
 					}
+					&::before{
+						color:#fff;
+						opacity:0.4;
+					}
 				}
 			}
 		}
@@ -71,9 +182,15 @@ a{
 					background:rgba(255,255,255,0.6);
 					border-radius:30px;
 
-					input{
+					input.form-control{
 						background:none;
 						border:none;
+						color:#fff;
+						font-size:1em;
+
+						@include placeholder{
+							color:#fff;
+						}
 
 						&:focus{
 							box-shadow:none;
@@ -97,6 +214,8 @@ a{
 						color:#fff;
 					}
 					.dropdown-menu{
+						z-index:30;
+
 						a{
 							color:#3c40c6;
 						}
@@ -109,6 +228,8 @@ a{
 	#gmui_page_content{
 		margin:-30px 30px 30px 30px;
 		min-height:60px;
+		position:relative;
+		z-index:20;
 
 		.card{
 			margin-bottom:20px;
@@ -120,10 +241,16 @@ a{
 
 				.card-title{
 					margin-top:10px;
+					font-size:1.5em;
 				}
+				.card-subtitle{
+					font-size:1em;
+					opacity:0.5;
+				}
+
 			}
 			.card-body{
-				padding:15px 20px 10px 20px;
+				padding:15px 20px 20px 20px;
 			}
 		}
 
@@ -134,7 +261,7 @@ a{
 					th{
 						font-weight: 300;
 						color:#f53b57;
-						font-size:1.4em;
+						font-size:1.3em;
 						border-top:none;
 					}
 				}
@@ -142,11 +269,18 @@ a{
 			tbody{
 				tr{
 					&:nth-of-type(2n+1){
-						background:#EBECF180;	
+						@include background-opacity($body-bg, 0.5);
 					}
 					
 				}
 			}
+		}
+
+		.ct-chart-line .ct-label.ct-horizontal.ct-end {
+		    display: block;
+		    text-align: center;
+		    transform: translate(-50%,0);
+		    white-space:nowrap;
 		}
 			
 	}
